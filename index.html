@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Welcome!</title>
+
+
+   <style>
+      .wrap {
+         margin-top: 150px;
+         perspective: 1000px;
+         perspective-origin: 50% 50%;
+      }
+
+      .cube {
+         margin: auto;
+         position: relative;
+         height: 200px;
+         width: 200px;
+         transform-style: preserve-3d;
+      }
+
+      .cube>div {
+         position: absolute;
+         box-sizing: border-box;
+         padding: 10px;
+         height: 100%;
+         width: 100%;
+         opacity: 0.9;
+         background-color: #000;
+         border: solid 1px #eeeeee;
+         color: #ffffff;
+      }
+
+      .front {
+         transform: translateZ(100px);
+      }
+
+      .back {
+         transform: translateZ(-100px) rotateY(180deg);
+      }
+
+      .right {
+         transform: rotateY(-270deg) translateX(100px);
+         transform-origin: top right;
+      }
+
+      .left {
+         transform: rotateY(270deg) translateX(-100px);
+         transform-origin: center left;
+      }
+
+      .top {
+         transform: rotateX(-270deg) translateY(-100px);
+         transform-origin: top center;
+      }
+
+
+      .bottom {
+         transform: rotateX(270deg) translateY(100px);
+         transform-origin: bottom center;
+      }
+
+      @keyframes rotate {
+         from {
+            transform: rotateX(0deg) rotateY(0deg);
+         }
+
+         to {
+            transform: rotateX(360deg) rotateY(360deg);
+         }
+      }
+
+      .cube {
+         animation: rotate 20s infinite linear;
+      }
+
+      .wrap:hover .front {
+         transform: translateZ(200px);
+      }
+
+      .wrap:hover .back {
+         transform: translateZ(-200px) rotateY(180deg);
+      }
+
+      .wrap:hover .right {
+         transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+      }
+
+      .wrap:hover .left {
+         transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+      }
+
+      .wrap:hover .top {
+         transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
+      }
+
+      .wrap:hover .bottom {
+         transform: rotateX(270deg) translateZ(100px) translateY(100px);
+      }
+
+
+
+      /* SECOND ELEMENT */
+
+      .container {
+         background-color: #ddd;
+         padding: 25px;
+
+      }
+
+      .content {
+         width: 100px;
+         height: 100px;
+         background-color: red;
+         transition: all 2s ease-in-out;
+         animation: rescale 2s infinite;
+
+      }
+
+      /* .content:hover{
+         transform: rotate(360deg);
+      } */
+      .child {
+         width: 25px;
+         height: 25px;
+      }
+
+      .child1 {
+         float: left;
+         background-color: black;
+      }
+
+      .child2 {
+         float: right;
+         background-color: yellow;
+      }
+
+      .child3 {
+         float: left;
+         background-color: #fff;
+         margin-top: 50%;
+      }
+
+      .child4 {
+         float: right;
+         background-color: blue;
+         margin-top: 50%;
+
+      }
+
+      .clearFloat {
+         clear: both;
+      }
+
+     @keyframes rescale {
+         0% {
+            transform: rotate(0deg);
+         }
+
+         10% {
+            transform: rotate(36deg);
+         }
+
+         20% {
+            transform: rotate(72deg);
+         }
+
+         30% {
+            transform: rotate(108deg);
+         }
+
+         40% {
+            transform: rotate(144deg);
+         }
+
+         50% {
+            transform: rotate(180deg);
+         }
+
+         60% {
+            transform: rotate(216deg);
+         }
+
+         70% {
+            transform: rotate(252deg);
+         }
+
+         80% {
+            transform: rotate(288deg);
+         }
+
+         90% {
+            transform: rotate(334deg);
+         }
+
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+   </style>
+
+   </style>
+
+
+</head>
+
+<body>
+
+
+
+   <div class="cards">
+      <div class="wrap">
+         <div class="cube">
+            <div class="front">
+               Front side
+            </div>
+            <div class="back">
+               Back side
+            </div>
+            <div class="top">
+               Top side
+            </div>
+            <div class="bottom">
+               Bottom side
+            </div>
+            <div class="left">
+               Left side
+            </div>
+            <div class="right">
+               Right side
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="cards">
+      <div class="wrap">
+         <div class="cube">
+            <div class="front">
+               <div class="container">
+                  <div class="content">
+                     <div class="child child1"></div>
+                     <div class="child child2"></div>
+                     <div class="clearFloat"></div>
+                     <div class="child child3"></div>
+                     <div class="child child4"></div>
+                     <span>
+                        <p>RetroRecords</p>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="back">
+               <div class="container">
+                  <div class="content">
+                     <div class="child child1"></div>
+                     <div class="child child2"></div>
+                     <div class="clearFloat"></div>
+                     <div class="child child3"></div>
+                     <div class="child child4"></div>
+                     <span>
+                        <p>RetroRecords</p>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="top">
+               <div class="container">
+                  <div class="content">
+                     <div class="child child1"></div>
+                     <div class="child child2"></div>
+                     <div class="clearFloat"></div>
+                     <div class="child child3"></div>
+                     <div class="child child4"></div>
+                     <span>
+                        <p>RetroRecords</p>
+                     </span>
+                  </div>
+               </div>            </div>
+            <div class="bottom">
+               <div class="container">
+                  <div class="content">
+                     <div class="child child1"></div>
+                     <div class="child child2"></div>
+                     <div class="clearFloat"></div>
+                     <div class="child child3"></div>
+                     <div class="child child4"></div>
+                     <span>
+                        <p>RetroRecords</p>
+                     </span>
+                  </div>
+               </div>            </div>
+            <div class="left">
+               <div class="container">
+                  <div class="content">
+                     <div class="child child1"></div>
+                     <div class="child child2"></div>
+                     <div class="clearFloat"></div>
+                     <div class="child child3"></div>
+                     <div class="child child4"></div>
+                     <span>
+                        <p>RetroRecords</p>
+                     </span>
+                  </div>
+               </div>            </div>
+            <div class="right">
+               <div class="container">
+                  <div class="content">
+                     <div class="child child1"></div>
+                     <div class="child child2"></div>
+                     <div class="clearFloat"></div>
+                     <div class="child child3"></div>
+                     <div class="child child4"></div>
+                     <span>
+                        <p>RetroRecords</p>
+                     </span>
+                  </div>
+               </div>            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+   <div class="container">
+      <div class="content">
+         <div class="child child1"></div>
+         <div class="child child2"></div>
+         <div class="clearFloat"></div>
+         <div class="child child3"></div>
+         <div class="child child4"></div>
+         <span>
+            <p>RetroRecords</p>
+         </span>
+      </div>
+      
+
+      <div class="container">
+         <div class="content">
+            <div class="child child1"></div>
+            <div class="child child2"></div>
+            <div class="clearFloat"></div>
+            <div class="child child3"></div>
+            <div class="child child4"></div>
+            <span>
+               <p>RetroRecords</p>
+            </span>
+         </div>
+      </div>
+</body>
+</html>
